@@ -1,10 +1,8 @@
-version: '3.3'
-
 services:
    db:
      image: mysql:5.7
      volumes:
-       - db_data:/var/lib/mysql
+       - db_data_std00:/var/lib/mysql # TODO: Bitte die Benutzernummer anpassen!
      restart: always
      environment:
        MYSQL_ROOT_PASSWORD: somewordpress
@@ -17,7 +15,7 @@ services:
        - db
      image: wordpress:latest
      ports:
-       - "8400:80"
+       - "8400:80" # TODO: Bitte (linken) Port an die Benutzernummer anpassen    !
      restart: always
      environment:
        WORDPRESS_DB_HOST: db:3306
@@ -25,4 +23,4 @@ services:
        WORDPRESS_DB_PASSWORD: wordpress
        WORDPRESS_DB_NAME: wordpress
 volumes:
-    db_data: {}
+    db_data_std00: {} # TODO: Bitte die Benutzernummer anpassen!

@@ -1,16 +1,15 @@
-version: '3'
-
 services:
   portainer:
     image: portainer/portainer-ce
     command: -H unix:///var/run/docker.sock
     restart: always
     ports:
-      - 9443:9443
-      - 8000:8000
+      - 9400:9443 # TODO: Bitte (linken) Port an die Benutzernummer anpassen!
+      - 8000:8000 # TODO: Bitte (linken) Port an die Benutzernummer anpassen!
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - portainer_data:/data
+      - portainer_data_std00:/data # TODO: Bitte die Benutzernummer anpassen!
 
 volumes:
-  portainer_data:
+  portainer_data_std00: # TODO: Bitte die Benutzernummer anpassen!
+
