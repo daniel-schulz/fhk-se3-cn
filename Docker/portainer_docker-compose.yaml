@@ -4,10 +4,9 @@ services:
   portainer:
     image: portainer/portainer-ce
     command: -H unix:///var/run/docker.sock
-    command: --admin-password LXSwV7wXuQtL68Zqw4FR
     restart: always
     ports:
-      - 9000:9000
+      - 9443:9443
       - 8000:8000
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
